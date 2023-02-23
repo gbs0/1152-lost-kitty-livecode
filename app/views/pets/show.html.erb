@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="card mb-3 mt-5" style="max-width: 80vw;">
+        <div class="row g-0">
+            <div class="col-md-4">
+            <img src="<%= @pet.photo %>" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title"><%= @pet.name %></h5>
+                <p class="card-text"><%= @pet.address %></p>
+                <p class="card-text"><small class="text-muted"><%= @pet.found_on ? @pet.found_on : "This pet was not founded yet!" %></small></p>
+                <%= link_to "Back", root_path, class: "btn btn-secondary btn-sm" %>
+                <br>
+                <%= button_to "I Found this Pet!", pet_founded_path(@pet.id), method: :put, class: "btn btn-danger btn-sm mt-3", data: {turbo: false} %>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>

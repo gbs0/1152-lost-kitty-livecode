@@ -1,0 +1,11 @@
+
+<div class="container">
+    <h1>Report a new Pet</h1>
+    <%= simple_form_for @pet do |form| %>
+    <%= form.input :name %>
+    <%= form.input :address %>
+    <%= form.input :photo %>
+    <%= form.input :species, collection: Pet::SPECIES.map { |specie| specie.capitalize } %>
+    <%= form.submit %>
+    <% end %>
+</div>
